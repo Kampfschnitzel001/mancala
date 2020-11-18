@@ -136,12 +136,7 @@ public class Game implements Serializable {
 	}
 
 	private int nextPocket(int nextPocket) {
-		if (nextPocket == 13) {
-			nextPocket = 0;
-		} else {
-			nextPocket++;
-		}
-		return nextPocket;
+		return (nextPocket == 13) ? 0 : nextPocket++;
 	}
 
 	public int getPlayer() {
