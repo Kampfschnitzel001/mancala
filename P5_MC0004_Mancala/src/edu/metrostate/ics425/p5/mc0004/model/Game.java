@@ -94,9 +94,13 @@ public class Game implements Serializable {
 				winner = 2;
 			}
 		} else {
+			
+			//if isValid(player,pNum == true) {
+			//}   not sure if the else is required
 			if (isValid(player, pNum) == false) {
 
 			} else {
+				//I think whats missing here is the reset of the pocket the player chose. You take all stones out, meaning you need to set the board[i] to 0
 				var numStones = gameBoard[pNum];
 				var nextPocket = nextPocket(pNum);
 				while (numStones > 0) {
@@ -135,7 +139,9 @@ public class Game implements Serializable {
 						System.out.println("Final Pocket: " + nextPocket);
 //						System.out.println("Opposite Pocket: " + oppositePocket);
 					}
-					gameBoard[pNum] = gameBoard[pNum] - 1;
+					//gameBoard[pNum] = gameBoard[pNum] - 1;
+					gameBoard[pNum]--;
+					
 					nextPocket = nextPocket(nextPocket);
 					numStones--;
 				}
@@ -166,6 +172,10 @@ public class Game implements Serializable {
 			}
 		}
 		return valid;
+		
+		/*
+		Is it only valid to take stones from own side? I thought you can also pick an enemies pocket?
+		*/
 	}
 
 	/**
