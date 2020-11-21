@@ -234,6 +234,25 @@ public class Game implements Serializable {
 			won = true;
 		}
 		return won;
+		
+		
+		//New try:
+		int stones = 0;
+		for(int i = 1; i < 7; i++) {
+			stones += gameBoard[i];	
+		}
+		if(stones == 0) {
+			return true;
+		}
+		stones = 0;
+		for(int i = 8; i < 14; i++) {
+			stones += gameBoard[i];	
+		}
+		if(stones == 0) {
+			return true;
+		}
+		return false;
+		
 	}
 
 }
