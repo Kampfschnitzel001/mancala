@@ -56,6 +56,7 @@ public class Game implements Serializable {
 
 		gameBoard = new int[NUM_POCKETS];
 		for (int i = 0; i < NUM_POCKETS; i++) {
+			/*
 			if (i >= 0 && i <= 6) {
 				if (i == 0) {
 					gameBoard[i] = 0;
@@ -68,6 +69,12 @@ public class Game implements Serializable {
 				} else {
 					gameBoard[i] = startingStones;
 				}
+			}
+			*/
+			if(i == 0 | i == 7) 
+				gameBoard[i] = 0;
+			} else {
+				gameBoard[i] = startingStones;
 			}
 
 		}
